@@ -15,5 +15,6 @@
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/btn_plus" />
+        app:srcCompat="@android:drawable/btn_plus"
+        android:contentDescription="@string/app_name"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
