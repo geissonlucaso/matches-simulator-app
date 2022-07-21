@@ -1,4 +1,4 @@
-package com.geissonlucaso.simulator
+package com.geissonlucaso.simulator.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

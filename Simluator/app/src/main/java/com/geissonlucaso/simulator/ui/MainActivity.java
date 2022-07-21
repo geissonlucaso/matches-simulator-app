@@ -1,4 +1,4 @@
-package com.geissonlucaso.simulator;
+package com.geissonlucaso.simulator.ui;
 
 import android.os.Bundle;
 
