@@ -17,5 +17,21 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        setupMatchList();
+        setupMatchesRefresh();
+        setupFloatingActionButton();
+    }
+
+    private void setupMatchList() {
+        // TODO List all matches.
+    }
+
+    private void setupMatchesRefresh() {
+        // TODO Update the matches in swipe refresh.
+    }
+
+    private void setupFloatingActionButton() {
+        // TODO Event click of simulation of a match.
     }
 }
