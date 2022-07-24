@@ -5,11 +5,14 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.geissonlucaso.simulator.R;
 import com.geissonlucaso.simulator.data.MatchesApi;
 import com.geissonlucaso.simulator.databinding.ActivityMainBinding;
 import com.geissonlucaso.simulator.domain.Match;
+import com.geissonlucaso.simulator.ui.adapter.MatchesAdapter;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private MatchesApi matchesApi;
+    private RecyclerView.Adapter matchesAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,12 +52,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupMatchList() {
+        binding.rvMatches.setHasFixedSize(true);
+        binding.rvMatches.setLayoutManager(new LinearLayoutManager(this));
         matchesApi.getMatches().enqueue(new Callback<List<Match>>() {
             @Override
             public void onResponse(Call<List<Match>> call, Response<List<Match>> response) {
                 if(response.isSuccessful()) {
                     List<Match> matches = response.body();
-                    Log.i("SIMULATOR", "OK - Partidas: " + matches.size());
+                    matchesAdapter = new MatchesAdapter(matches);
+                    binding.rvMatches.setAdapter(matchesAdapter);
                 } else {
                     showErrorMessage();
                 }
