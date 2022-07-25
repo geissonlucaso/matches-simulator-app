@@ -19,7 +19,8 @@
         <activity
             android:name=".ui.DetailsActivity"
             android:theme="@style/Theme.Simulator.NoActionBar"
-            android:exported="false" />
+            android:exported="true"
+            android:parentActivityName=".ui.MainActivity"/>
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">

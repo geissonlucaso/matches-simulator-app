@@ -7,6 +7,10 @@ import com.geissonlucaso.simulator.databinding.ActivityMainBinding
 
 class DetailsActivity : AppCompatActivity() {
 
+    object Extras {
+        const val MATCH = "EXTRA_MATCH"
+    }
+
     private lateinit var binding: ActivityDetailsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,6 +1,7 @@
 package com.geissonlucaso.simulator.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.geissonlucaso.simulator.databinding.MatchItemBinding;
 import com.geissonlucaso.simulator.domain.Match;
+import com.geissonlucaso.simulator.ui.DetailsActivity;
 
 import java.util.List;
 
@@ -56,6 +58,12 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHold
         holder.binding.tvAwayTeamName.setText(match.getAwayTeam().getName());
         if (match.getAwayTeam().getScore() != null)
             holder.binding.tvAwayTeamScore.setText(String.valueOf(match.getAwayTeam().getScore()));
+
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(context, DetailsActivity.class);
+            intent.putExtra(DetailsActivity.Extras.MATCH, match);
+            context.startActivity(intent);
+        });
     }
 
     @Override
