@@ -21,6 +21,10 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHold
         this.matches = matches;
     }
 
+    public List<Match> getMatches() {
+        return matches;
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final MatchItemBinding binding;
 
@@ -45,8 +49,13 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHold
 
         Glide.with(context).load(match.getHomeTeam().getPicture()).circleCrop().into(holder.binding.ivHomeTeam);
         holder.binding.tvHomeTeamName.setText(match.getHomeTeam().getName());
+        if (match.getHomeTeam().getScore() != null)
+            holder.binding.tvHomeTeamScore.setText(String.valueOf(match.getHomeTeam().getScore()));
+
         Glide.with(context).load(match.getAwayTeam().getPicture()).circleCrop().into(holder.binding.ivAwayTeam);
         holder.binding.tvAwayTeamName.setText(match.getAwayTeam().getName());
+        if (match.getAwayTeam().getScore() != null)
+            holder.binding.tvAwayTeamScore.setText(String.valueOf(match.getAwayTeam().getScore()));
     }
 
     @Override
