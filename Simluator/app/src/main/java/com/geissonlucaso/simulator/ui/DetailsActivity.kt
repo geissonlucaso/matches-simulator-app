@@ -1,10 +1,9 @@
 package com.geissonlucaso.simulator.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.geissonlucaso.simulator.databinding.ActivityDetailsBinding
-import com.geissonlucaso.simulator.databinding.ActivityMainBinding
 import com.geissonlucaso.simulator.domain.Match
 
 class DetailsActivity : AppCompatActivity() {
