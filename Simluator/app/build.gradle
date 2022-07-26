@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
     id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -39,7 +40,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -56,10 +57,13 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     //https://firebase.google.com/docs/android/setup?hl=pt-br#create-firebase-project
-    // Import the Firebase BoM - Firebase.
+    // Import Firebase BoM - Firebase.
     implementation platform('com.google.firebase:firebase-bom:30.3.1')
-    // Import the Analytics - Firebase
+    // Import Analytics - Firebase.
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    // https://firebase.google.com/docs/crashlytics/get-started?platform=android#add-sdk
+    // Import Crashlytics- Firebase.
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
